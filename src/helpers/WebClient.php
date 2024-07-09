@@ -66,6 +66,10 @@ class WebClient {
                 ],
                 'handler' => $stack,
                 'timeout' => 60, // seconds
+                'curl' => [
+                    // Try the best authentication method when credentials are given.
+                    \CURLOPT_HTTPAUTH => \CURLAUTH_ANY,
+                ],
             ]);
 
             $this->httpClient = $httpClient;
